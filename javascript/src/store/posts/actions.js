@@ -1,11 +1,7 @@
 // import { thunk } from "redux-thunk";
 import ApiService from "../../service/apiService";
 
-import {
-  GET_POST_START,
-  GET_POST_SUCCESS,
-  GET_POST_FAILED,
-} from "./posts.types";
+import { GET_POST_START, GET_POST_SUCCESS, GET_POST_FAILED } from "./types";
 
 const client = new ApiService({});
 
@@ -32,7 +28,7 @@ export const getPosts = () => {
     dispatch({ type: GET_POST_START });
 
     try {
-      const response = await client.get(`/posts`);
+      const response = await client.get("/posts/");
       dispatch(getPostsSuccess(response));
     } catch (error) {
       dispatch(getPostsFailed(error));

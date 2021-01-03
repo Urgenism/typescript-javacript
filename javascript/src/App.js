@@ -1,18 +1,11 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
-import Posts from "./component/Posts";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./component/Home";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/' component={() => <Redirect to='/posts' />} />
-        <Route exact path='/posts' component={Posts} />
+        <Route exact path='/' component={Home} />
       </Switch>
     </Router>
   );

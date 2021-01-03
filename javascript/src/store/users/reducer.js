@@ -1,31 +1,27 @@
-import {
-  GET_POST_START,
-  GET_POST_FAILED,
-  GET_POST_SUCCESS,
-} from "./posts.types";
+import { GET_USER_START, GET_USER_FAILED, GET_USER_SUCCESS } from "./types";
 
 const INITIAL_STATE = {
-  posts: [],
+  users: [],
   error: null,
   status: null,
 };
 
 const postsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case GET_POST_START:
+    case GET_USER_START:
       return {
         ...state,
         status: 100,
       };
 
-    case GET_POST_SUCCESS:
+    case GET_USER_SUCCESS:
       return {
         ...state,
-        posts: action.payload.data,
+        users: action.payload.data,
         status: 1,
       };
 
-    case GET_POST_FAILED:
+    case GET_USER_FAILED:
       return {
         ...state,
         error: action.payload.error.message,
